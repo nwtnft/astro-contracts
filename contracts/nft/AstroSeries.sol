@@ -36,11 +36,7 @@ contract AstroSeries is Context, ERC1155, Ownable, Pausable, ERC1155Burnable, ER
 
 	constructor(address _dev, string memory _baseURI) ERC1155(_baseURI) {
 		setDevAddress(_dev);
-		setURI(_baseURI);
-	}
-
-	function setURI(string memory newuri) public onlyDev {
-		_setURI(newuri);
+		baseURI = _baseURI;
 	}
 
 	function pause() public onlyDev {
